@@ -982,9 +982,9 @@ section,
     width: 0;
 }
 
-.bar-90  { animation: run90  2.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.8s; }
-.bar-95  { animation: run95  2.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.8s; }
-.bar-100 { animation: run100 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.8s; }
+.bar-90  { animation: run90  2.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 2s; }
+.bar-95  { animation: run95  2.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 2s; }
+.bar-100 { animation: run100 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 2s; }
 
 @keyframes run95  { 100% { width: 95%; } }
 @keyframes run100 { 100% { width: 100%; } }
