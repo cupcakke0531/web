@@ -87,8 +87,10 @@ h6 {
   font-family: var(--heading-font);
 }
 
+/*----------------------------
 /* PHP Email Form Messages
 ------------------------------*/
+
 .php-email-form .error-message {
   display: none;
   background: #df1529;
@@ -142,17 +144,16 @@ h6 {
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
+
 .header {
   color: var(--default-color);
-  
   background-color: rgba(255, 255, 255, 0.75) !important; 
-  
   backdrop-filter: blur(10px) !important; 
   -webkit-backdrop-filter: blur(10px) !important;
-  
   padding: 15px 0;
   transition: all 0.5s;
-  z-index: 997;
+  position: relative;
+  z-index: 9999;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -206,7 +207,9 @@ h6 {
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
+
 /* Desktop Navigation */
+
 @media (min-width: 1200px) {
   .navmenu {
     padding: 0;
@@ -457,6 +460,7 @@ h6 {
     inset: 0;
     background: rgba(33, 37, 41, 0.8);
     transition: 0.3s;
+    z-index: 99999;
   }
 
   .mobile-nav-active .navmenu>ul {
@@ -467,6 +471,7 @@ h6 {
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
+
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -511,6 +516,7 @@ h6 {
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
+
 #preloader {
   position: fixed;
   inset: 0;
@@ -556,6 +562,7 @@ h6 {
 /*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/
+
 .scroll-top {
   position: fixed;
   visibility: hidden;
@@ -590,6 +597,7 @@ h6 {
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
+
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
@@ -599,6 +607,7 @@ h6 {
 /*--------------------------------------------------------------
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
+
 .page-title {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -636,6 +645,7 @@ h6 {
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
+
 section,
 .section {
   color: var(--default-color);
@@ -656,6 +666,7 @@ section,
 /*--------------------------------------------------------------
 # Global Section Titles
 --------------------------------------------------------------*/
+
 .section-title {
   text-align: center;
   padding-bottom: 60px;
@@ -690,6 +701,7 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
 .hero {
   width: 100%;
   min-height: calc(100vh - 82px);
@@ -712,13 +724,31 @@ section,
 }
 
 .hero img {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1 !important;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2 !important;
+}
+
+main, #main {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.header, #header {
+    z-index: 99999 !important;
+}
+
+.navmenu, .mobile-nav-active .navmenu {
+    z-index: 999999 !important;
 }
 
 .hero .container {
@@ -765,6 +795,16 @@ section,
   .hero p {
     font-size: 18px;
   }
+}
+
+.header, #header {
+    position: relative !important;
+    z-index: 999999 !important;
+}
+
+main, #main, .main {
+    position: relative !important;
+    z-index: 1 !important;
 }
 
 /*--------------------------------------------------------------
@@ -1206,6 +1246,7 @@ section,
 /*--------------------------------------------------------------
 # Resume Section
 --------------------------------------------------------------*/
+
 .resume .resume-title {
   color: var(--heading-color);
   font-size: 26px;
@@ -1364,6 +1405,7 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
+
 .portfolio .section-title { 
     margin-bottom: 40px !important; 
 }
@@ -1596,6 +1638,7 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+
 .contact .section-title { 
     margin-bottom: 50px !important; 
 }
@@ -1611,7 +1654,7 @@ section,
     font-style: normal; 
 }
 
-/* 左側資訊區與右側表單：統一卡片白底與懸浮效果 */
+
 .contact .info-wrap,
 .contact .amelia-form {
     background-color: #ffffff;
@@ -1730,7 +1773,6 @@ section,
     box-shadow: 0 12px 25px rgba(163, 147, 214, 0.6);
 }
 
-/* ⚡️ 狀態訊息顯示與隱藏機制 */
 .contact .amelia-form .loading,
 .contact .amelia-form .error-message,
 .contact .amelia-form .sent-message {
@@ -1762,6 +1804,7 @@ section,
 /* ==================================================
    🚀
 ================================================== */
+
 body, h1, h2, h3, h4, h5, h6, p, a, span {
   font-family: 'Quicksand', 'Zen Maru Gothic', sans-serif !important;
 }
@@ -1834,6 +1877,23 @@ body, h1, h2, h3, h4, h5, h6, p, a, span {
 .header .navmenu a:hover,
 .header .navmenu a.active {
   font-weight: 700 !important;
+}
+
+.header {
+    position: relative !important;
+    z-index: 9999 !important;
+}
+
+body.mobile-nav-active .header {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    transition: none !important;
+    }
+
+main, #main, .hero {
+    position: relative;
+    z-index: 1;
 }
 
 /*--------------------------------------------------------------
