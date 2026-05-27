@@ -1493,63 +1493,104 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/
+
 .portfolio-details .portfolio-details-slider img {
-  width: 100%;
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(163, 147, 214, 0.05);
+    transition: transform 0.4s ease;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
+    margin-top: 20px;
+    position: relative;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-  opacity: 1;
+    width: 10px;
+    height: 10px;
+    background-color: #e9e4f5;
+    opacity: 1;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
+    background: linear-gradient(90deg, #a393d6 0%, #c4b5f0 100%);
+    width: 28px;
+    border-radius: 10px;
 }
 
 .portfolio-details .portfolio-info {
-  background-color: var(--surface-color);
-  padding: 30px;
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 35px !important;
+    box-shadow: 0 15px 35px rgba(163, 147, 214, 0.06) !important;
+    border-radius: 24px !important;
+    border: 1px solid #f5f2fc;
 }
 
 .portfolio-details .portfolio-info h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0edf7;
+    color: #3b2e5a;
+    font-family: 'Poppins', 'Zen Maru Gothic', sans-serif !important;
+    letter-spacing: 1px;
 }
 
 .portfolio-details .portfolio-info ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.portfolio-details .portfolio-info ul li+li {
-  margin-top: 10px;
+.portfolio-details .portfolio-info ul li {
+    padding: 15px 0 !important;
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px dashed #e9e4f5 !important;
+    font-size: 0.95rem;
+    color: #6a5d91;
+}
+
+.portfolio-details .portfolio-info ul li:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
+.portfolio-details .portfolio-info ul li strong {
+    color: #5b4e8c;
+    font-weight: 600;
+    min-width: 140px;
+    flex-shrink: 0;
+}
+
+.portfolio-details .portfolio-info ul li span {
+    line-height: 1.6;
+    text-align: left;
 }
 
 .portfolio-details .portfolio-description {
-  padding-top: 30px;
+    padding: 45px !important;
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(163, 147, 214, 0.05);
+    border: 1px solid #f5f2fc;
+    margin-top: 20px;
 }
 
 .portfolio-details .portfolio-description h2 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #3b2e5a;
+    line-height: 1.5;
 }
 
 .portfolio-details .portfolio-description p {
-  padding: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+    padding: 0;
+    margin: 0;
+    color: #555555;
 }
 
 /*--------------------------------------------------------------
@@ -1570,8 +1611,9 @@ section,
     font-style: normal; 
 }
 
+/* 左側資訊區與右側表單：統一卡片白底與懸浮效果 */
 .contact .info-wrap,
-.contact .php-email-form {
+.contact .amelia-form {
     background-color: #ffffff;
     border-radius: 28px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.04);
@@ -1581,13 +1623,13 @@ section,
 }
 
 .contact .info-wrap:hover,
-.contact .php-email-form:hover {
+.contact .amelia-form:hover {
     box-shadow: 0 25px 50px rgba(163, 147, 214, 0.12);
 }
 
 @media (max-width: 575px) {
     .contact .info-wrap,
-    .contact .php-email-form {
+    .contact .amelia-form {
         padding: 25px;
     }
 }
@@ -1631,7 +1673,8 @@ section,
     margin-bottom: 0;
 }
 
-.contact .php-email-form .form-label {
+/* ⚡️ 以下是右側 amelia-form 專屬美化 */
+.contact .amelia-form .form-label {
     font-family: 'Zen Maru Gothic', sans-serif;
     color: #5b4e8c;
     font-weight: 600;
@@ -1639,8 +1682,8 @@ section,
     letter-spacing: 1px;
 }
 
-.contact .php-email-form input,
-.contact .php-email-form textarea {
+.contact .amelia-form input,
+.contact .amelia-form textarea {
     font-family: 'Quicksand', sans-serif;
     font-size: 0.95rem;
     padding: 12px 18px;
@@ -1652,21 +1695,21 @@ section,
     transition: all 0.3s ease;
 }
 
-.contact .php-email-form input:focus,
-.contact .php-email-form textarea:focus {
+.contact .amelia-form input:focus,
+.contact .amelia-form textarea:focus {
     border-color: #a393d6;
     background-color: #ffffff;
     box-shadow: 0 0 0 4px rgba(163, 147, 214, 0.15);
     outline: none;
 }
 
-.contact .php-email-form input::placeholder,
-.contact .php-email-form textarea::placeholder {
+.contact .amelia-form input::placeholder,
+.contact .amelia-form textarea::placeholder {
     color: #c4b5f0;
     font-style: italic;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .amelia-form button[type=submit] {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -1678,17 +1721,47 @@ section,
     border-radius: 50px;
     transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
     box-shadow: 0 8px 20px rgba(163, 147, 214, 0.4);
+    cursor: pointer;
+    margin-top: 15px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .amelia-form button[type=submit]:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 25px rgba(163, 147, 214, 0.6);
+}
+
+/* ⚡️ 狀態訊息顯示與隱藏機制 */
+.contact .amelia-form .loading,
+.contact .amelia-form .error-message,
+.contact .amelia-form .sent-message {
+    display: none; 
+    text-align: center;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+.contact .amelia-form .loading {
+    background-color: #f0edf7;
+    color: #6a5d91;
+}
+.contact .amelia-form .sent-message {
+    background-color: #f1fcf8;
+    color: #20c997;
+    border: 1px solid #d0f4e6;
+}
+.contact .amelia-form .error-message {
+    background-color: #fff5f5;
+    color: #df1529;
+    border: 1px solid #ffe6e6;
 }
 
 /* ==================================================
    🚀
 ================================================== */
-
 body, h1, h2, h3, h4, h5, h6, p, a, span {
   font-family: 'Quicksand', 'Zen Maru Gothic', sans-serif !important;
 }
