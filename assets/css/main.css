@@ -1896,6 +1896,40 @@ main, #main, .hero {
     z-index: 1;
 }
 
+.navmenu .dropdown ul {
+    background-color: #ffffff !important;
+    border-radius: 8px !important;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.08) !important;
+    padding: 15px 10px !important;
+}
+
+.navmenu .dropdown ul a {
+    font-size: 16px !important;
+    color: #555555 !important;
+    padding: 10px 20px !important;
+}
+
+.navmenu .dropdown ul a:hover {
+    color: var(--accent-color) !important; 
+}
+
+@media (min-width: 1200px) {
+    .navmenu > ul > li > a:before {
+        height: 3px !important;            
+        bottom: -6px !important;
+        background-color: #c3a6ff !important; 
+        border-radius: 5px !important;     
+        box-shadow: 0px 2px 8px rgba(195, 166, 255, 0.7) !important; 
+        transition: all 0.3s ease !important;
+    }
+    
+    .navmenu a:hover:before,
+    .navmenu li:hover > a:before,
+    .navmenu .active:before {
+        width: 100% !important;            
+    }
+}
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
